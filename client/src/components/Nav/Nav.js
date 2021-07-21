@@ -1,26 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {
   detectRoute,
   uploadRoute,
   userMutantsRoute,
 } from '../Routes/allRoutes';
+import NavStyles from './NavStyles';
 
 const Nav = () => (
-  <nav>
+  <NavStyles>
     <ul>
       <li>
-        <Link to={detectRoute}>Detector de mutantes</Link>
+        <NavLink to={detectRoute} exact>
+          Detector de mutantes
+        </NavLink>
       </li>
       <li>
-        <Link to={uploadRoute}>Cargar mutantes</Link>
+        <NavLink to={uploadRoute} exact>
+          Cargar mutantes
+        </NavLink>
       </li>
       {/* TODO: add number of mutants at the end */}
       <li>
-        <Link to={userMutantsRoute}>Mis mutantes</Link>
+        <NavLink to={userMutantsRoute} exact>
+          Mis mutantes
+        </NavLink>
       </li>
     </ul>
-  </nav>
+  </NavStyles>
 );
 
 export default Nav;

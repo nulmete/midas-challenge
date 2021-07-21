@@ -1,14 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Nav from './components/Nav/Nav';
-import Routes from './components/Routes/Routes';
+import styled from 'styled-components';
+import Body from './components/Body/Body';
+import Header from './components/Header/Header';
+
+const AppStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 90%;
+`;
 
 const App = () => (
   <Router>
-    <Nav />
-    <main>
-      <Routes />
-    </main>
+    <AppStyles>
+      <Header />
+      <Body />
+    </AppStyles>
   </Router>
 );
 

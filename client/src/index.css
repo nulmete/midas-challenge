@@ -2,6 +2,8 @@
 
 html {
   box-sizing: border-box;
+
+  /* Default font-size is 10px */
   font-size: 62.5%;
 
   /* Font variables */
@@ -13,12 +15,14 @@ html {
   /* Color variables */
   --color-magneto-header: #FAFF03;
   --color-body: #000000;
-  --color-body-container: #FAFAFA;
-  --color-background: #6C6C6C;
   --color-nav-active-link: #FF0606;
   --color-mutant-power: #315DF6;
   --color-mutant-favorite: #DBFF00;
   --color-mutant-remove: #64C75A;
+
+  /* Background variables */
+  --background-app: #6C6C6C;
+  --background-body: #FAFAFA;
 
   /* Box shadow variables */
   --box-shadow-nav: 0px 4px 8px rgba(0, 0, 0, 0.5);
@@ -34,6 +38,12 @@ body {
 
   /* Average value based on Figma mockup */
   line-height: 1.2;
+
+  background: var(--background-app);
+}
+
+html, body {
+  height: 100%;
 }
 
 *,

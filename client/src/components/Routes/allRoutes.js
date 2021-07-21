@@ -1,3 +1,3 @@
-export const detectRoute = '/detect';
+export const detectRoute = '/';
 export const uploadRoute = '/upload';
 export const userMutantsRoute = '/mutants';
