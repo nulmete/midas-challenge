@@ -3,6 +3,26 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  /* Font variables */
+  --font-weight-lighter: 300;
+  --font-weight-regular: 400;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+
+  /* Color variables */
+  --color-magneto-header: #FAFF03;
+  --color-body: #000000;
+  --color-body-container: #FAFAFA;
+  --color-background: #6C6C6C;
+  --color-nav-active-link: #FF0606;
+  --color-mutant-power: #315DF6;
+  --color-mutant-favorite: #DBFF00;
+  --color-mutant-remove: #64C75A;
+
+  /* Box shadow variables */
+  --box-shadow-nav: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  --box-shadow-default: 5px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -11,6 +31,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Average value based on Figma mockup */
+  line-height: 1.2;
 }
 
 *,
