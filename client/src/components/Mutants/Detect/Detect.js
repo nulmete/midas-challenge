@@ -82,6 +82,7 @@ const Detect = () => {
                     htmlFor={`sequences[${i}]`}
                     register={register}
                     error={errors.sequences?.[i]?.message}
+                    required
                     minLength={6}
                     maxLength={6}
                     style={{ width: '100%' }}

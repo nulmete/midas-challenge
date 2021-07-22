@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { MutantsStateProvider } from './state/MutantsContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MutantsStateProvider>
+      <App />
+    </MutantsStateProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
