@@ -14,8 +14,10 @@ html {
 
   /* Color variables */
   --color-magneto-header: #FAFF03;
-  --color-body: #000000;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
   --color-nav-active-link: #FF0606;
+  --color-input-placeholder: #888787;
   --color-mutant-power: #315DF6;
   --color-mutant-favorite: #DBFF00;
   --color-mutant-remove: #64C75A;

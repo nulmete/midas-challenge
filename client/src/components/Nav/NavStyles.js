@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const NavStyles = styled.nav`
+  background-color: inherit;
   box-shadow: var(--box-shadow-nav);
 
   ul {
