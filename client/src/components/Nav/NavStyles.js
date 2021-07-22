@@ -15,7 +15,7 @@ const NavStyles = styled.nav`
     display: block;
     font-size: 2.6rem;
     font-weight: var(--font-weight-semi-bold);
-    padding: 5rem 0;
+    padding: var(--spacer) 0;
     text-decoration: none;
 
     &.active {

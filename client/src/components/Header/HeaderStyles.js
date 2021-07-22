@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const HeaderStyles = styled.header`
-  margin-bottom: 10rem;
+  margin-bottom: var(--spacer);
 
   h1 {
     color: var(--color-magneto-header);

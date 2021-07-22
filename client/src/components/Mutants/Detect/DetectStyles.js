@@ -1,20 +1,13 @@
 import styled from 'styled-components';
 
 const DetectStyles = styled.div`
-  h3 {
-    font-size: 4.2rem;
-    font-weight: var(--font-weight-semi-bold);
-  }
-
   .dna {
     box-shadow: var(--box-shadow-default);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.6rem;
-
-    /* Testing purposes */
-    height: 200px;
+    padding: var(--spacer) 1rem;
 
     &__sequence {
       max-width: 8ch;
@@ -32,6 +25,12 @@ const DetectStyles = styled.div`
         bottom: 0;
       }
     }
+  }
+
+  form > button[type='submit'] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 

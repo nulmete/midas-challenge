@@ -29,6 +29,10 @@ html {
   /* Box shadow variables */
   --box-shadow-nav: 0px 4px 8px rgba(0, 0, 0, 0.5);
   --box-shadow-default: 5px 4px 10px rgba(0, 0, 0, 0.5);
+
+  /* Spacing variables */
+  --spacer: 5rem;
+  --spacer-lg: 10rem;
 }
 
 body {
@@ -54,4 +58,13 @@ html, body {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+}
+
+/* Utililty classes */
+.spacing > * + * {
+  margin-top: var(--spacer);
+}
+
+.spacing-lg > * + * {
+  margin-top: var(--spacer-lg);
 }
