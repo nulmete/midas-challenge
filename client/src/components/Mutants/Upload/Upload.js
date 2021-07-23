@@ -11,9 +11,14 @@ import { useMutants } from '../../../state/MutantsContext';
 import SuccessScreen from '../../SuccessScreen/SuccessScreen';
 
 const uploadSchema = yup.object().shape({
-  name: yup.string().required('Requerido.'),
-  superpower: yup.string().required('Requerido.'),
-  // level: yup.string().required('Requerido.').nullable(),
+  name: yup
+    .string()
+    .required('Requerido.')
+    .max(10, 'Ingresá 10 caracteres como máximo.'),
+  superpower: yup
+    .string()
+    .required('Requerido.')
+    .max(10, 'Ingresá 10 caracteres como máximo.'),
   level: yup.string().required('Requerido.').nullable(),
 });
 

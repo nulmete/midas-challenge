@@ -87,7 +87,6 @@ const Detect = () => {
                     placeholder="ATCGAC"
                     minLength={6}
                     maxLength={6}
-                    style={{ width: '100%', fontSize: '2.6rem' }}
                     onKeyPress={(e) => {
                       // Only allow to enter "A", "C", "G" and "T"
                       // TODO: maybe move to a constants.js file

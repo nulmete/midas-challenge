@@ -10,6 +10,10 @@ const SuccessScreenStyles = styled.div`
     ${defaultImgStyling}
     margin: 0 auto;
   }
+
+  h2 {
+    text-align: center;
+  }
 `;
 
 export default SuccessScreenStyles;

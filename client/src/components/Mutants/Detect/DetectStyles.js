@@ -18,6 +18,12 @@ const DetectStyles = styled.div`
       @media screen and (max-width: 37.5em) {
         max-width: 100%;
       }
+
+      input[type='text'] {
+        font-size: 2.6rem;
+        font-weight: var(--font-weight-lighter);
+        width: 100%;
+      }
     }
   }
 `;
