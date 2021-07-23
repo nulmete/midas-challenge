@@ -60,6 +60,7 @@ const Upload = () => {
       <form onSubmit={handleSubmit(onNewMutantSubmit)} className="spacing">
         <TextInput
           label="Nombre del mutante"
+          placeholder="Nombre"
           htmlFor="name"
           required
           register={register}
@@ -67,6 +68,7 @@ const Upload = () => {
         />
         <TextInput
           label="Superpoder"
+          placeholder="Ingresá el superpoder"
           htmlFor="superpower"
           required
           register={register}

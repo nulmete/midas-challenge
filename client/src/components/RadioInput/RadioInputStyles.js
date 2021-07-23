@@ -13,6 +13,15 @@ const RadioInputStyles = styled.div`
   input[type='radio'] {
     transform: scale(1.5);
   }
+
+  @media screen and (max-width: 25em) {
+    flex-direction: row;
+
+    input[type='radio'] {
+      transform: scale(1.25);
+      margin-right: 0.5rem;
+    }
+  }
 `;
 
 export default RadioInputStyles;
