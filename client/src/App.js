@@ -10,6 +10,7 @@ const AppStyles = styled.div`
   align-items: center;
   margin: 0 auto;
   max-width: 90%;
+  padding: 2rem 0;
 `;
 
 const App = () => (

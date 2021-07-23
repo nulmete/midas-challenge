@@ -4,6 +4,7 @@ const TextInputStyles = styled.div`
   label {
     display: block;
     font-size: 2.2rem;
+    margin-bottom: 1rem;
   }
 
   input {

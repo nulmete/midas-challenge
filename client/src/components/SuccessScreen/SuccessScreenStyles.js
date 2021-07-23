@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { defaultImgStyling } from '../../mixins';
 
 const SuccessScreenStyles = styled.div`
   display: flex;
@@ -6,9 +7,8 @@ const SuccessScreenStyles = styled.div`
   align-items: center;
 
   img {
-    display: block;
+    ${defaultImgStyling}
     margin: 0 auto;
-    max-width: 100%;
   }
 `;
 

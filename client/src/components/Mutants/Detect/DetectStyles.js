@@ -4,33 +4,17 @@ const DetectStyles = styled.div`
   .dna {
     box-shadow: var(--box-shadow-default);
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     font-size: 2.6rem;
     padding: var(--spacer) 1rem;
 
     &__sequence {
+      min-width: 8ch;
       max-width: 8ch;
+      margin: 0.5em;
     }
-
-    &__sequence:not(:last-child) {
-      margin-right: 10px;
-      position: relative;
-
-      &::after {
-        position: absolute;
-        content: ',';
-        display: block;
-        right: -8px;
-        bottom: 0;
-      }
-    }
-  }
-
-  form > button[type='submit'] {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
   }
 `;
 

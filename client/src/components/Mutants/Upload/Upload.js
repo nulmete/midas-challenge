@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Heading3 from '../../Typography/Heading3';
@@ -9,34 +9,42 @@ import RadioInput from '../../RadioInput/RadioInput';
 import Button from '../../Button/Button';
 import { useMutants } from '../../../state/MutantsContext';
 
+const uploadSchema = yup.object().shape({
+  name: yup.string().required('Requerido.'),
+  superpower: yup.string().required('Requerido.'),
+  // level: yup.string().required('Requerido.').nullable(),
+  level: yup.string().required('Requerido.').nullable(),
+});
+
 const Upload = () => {
   const { addMutant } = useMutants();
 
-  // TODO: validation
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: yupResolver(uploadSchema) });
+
+  console.log({ errors });
 
   // TODO: maybe move to a constants.js file
   const levels = [
     {
       label: 'Bajo',
-      value: 'low',
+      value: '1',
     },
     {
       label: 'Medio',
-      value: 'medium',
+      value: '2',
     },
     {
       label: 'Alto',
-      value: 'high',
+      value: '3',
     },
     {
       label: 'Muy alto',
-      value: 'veryHigh',
+      value: '4',
     },
   ];
 
@@ -47,9 +55,9 @@ const Upload = () => {
   };
 
   return (
-    <UploadStyles>
+    <UploadStyles className="spacing">
       <Heading3>Registrar nuevo mutante</Heading3>
-      <form onSubmit={handleSubmit(onNewMutantSubmit)}>
+      <form onSubmit={handleSubmit(onNewMutantSubmit)} className="spacing">
         <TextInput
           label="Nombre del mutante"
           htmlFor="name"
@@ -64,19 +72,30 @@ const Upload = () => {
           register={register}
           error={errors.superpower?.message}
         />
-        <p>Nivel*</p>
-        {levels.map(({ label, value }) => (
-          <RadioInput
-            key={value}
-            label={label}
-            name="level"
-            value={value}
-            htmlFor={value}
-            required
-            register={register}
-          />
-        ))}
-        <Button type="submit">Enviar</Button>
+        <div className="levels">
+          <div className="levels__label">
+            <span>Nivel*</span>
+            {errors.level?.message && (
+              <span className="input-error">{errors.level.message}</span>
+            )}
+          </div>
+          <div className="levels__options">
+            {levels.map(({ label, value }) => (
+              <RadioInput
+                key={value}
+                label={label}
+                name="level"
+                value={value}
+                htmlFor={value}
+                required
+                register={register}
+              />
+            ))}
+          </div>
+        </div>
+        <Button type="submit" centerX>
+          Enviar
+        </Button>
       </form>
     </UploadStyles>
   );

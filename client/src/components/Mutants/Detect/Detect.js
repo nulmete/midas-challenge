@@ -83,9 +83,10 @@ const Detect = () => {
                     register={register}
                     error={errors.sequences?.[i]?.message}
                     required
+                    placeholder="ATCGAC"
                     minLength={6}
                     maxLength={6}
-                    style={{ width: '100%' }}
+                    style={{ width: '100%', fontSize: '2.6rem' }}
                     onKeyPress={(e) => {
                       // Only allow to enter "A", "C", "G" and "T"
                       // TODO: maybe move to a constants.js file
@@ -97,7 +98,9 @@ const Detect = () => {
                 </div>
               ))}
             </div>
-            <Button type="submit">Analizar</Button>
+            <Button type="submit" centerX>
+              Analizar
+            </Button>
           </form>
         </>
       )}

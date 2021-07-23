@@ -21,6 +21,7 @@ html {
   --color-mutant-power: #315DF6;
   --color-mutant-favorite: #DBFF00;
   --color-mutant-remove: #64C75A;
+  --color-error: #D8000C;
 
   /* Background variables */
   --background-app: #6C6C6C;
@@ -41,10 +42,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* Average value based on Figma mockup */
-  line-height: 1.2;
-
+  line-height: 1.6;
   background: var(--background-app);
 }
 
@@ -60,7 +58,7 @@ html, body {
   padding: 0;
 }
 
-/* Utililty classes */
+/* Utility classes */
 .spacing > * + * {
   margin-top: var(--spacer);
 }
@@ -68,3 +66,25 @@ html, body {
 .spacing-lg > * + * {
   margin-top: var(--spacer-lg);
 }
+
+.input-error {
+  color: var(--color-error);
+  font-size: 2.2rem;
+}
+
+/* 900px */
+@media screen and (max-width: 56.25em) {
+  html {
+    /* font-size: 9px */
+    font-size: 56.25%;
+  }
+}
+
+/* 600px */
+@media screen and (max-width: 37.5em) {
+  html {
+    /* font-size: 8px */
+    font-size: 50%;
+  }
+}
+
