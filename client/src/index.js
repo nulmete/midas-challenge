@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { MutantsStateProvider } from './state/MutantsContext';
+import Alert from './components/Alert/Alert';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MutantsStateProvider>
-      <App />
-    </MutantsStateProvider>
+    <Alert>
+      <MutantsStateProvider>
+        <App />
+      </MutantsStateProvider>
+    </Alert>
   </React.StrictMode>,
   document.getElementById('root')
 );

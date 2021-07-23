@@ -20,6 +20,10 @@ const UserMutantsStyles = styled.div`
       justify-items: center;
       align-items: center;
 
+      &--fav {
+        outline: 3px solid var(--color-mutant-favorite);
+      }
+
       &__level {
         border-bottom: 1px solid var(--color-black);
         border-right: 1px solid var(--color-black);

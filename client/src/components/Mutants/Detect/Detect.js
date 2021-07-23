@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
+import { useAlert } from 'react-alert';
 import Button from '../../Button/Button';
 import TextInput from '../../TextInput/TextInput';
 import DetectStyles from './DetectStyles';
@@ -21,6 +22,8 @@ const dnaSchema = yup.object().shape({
 });
 
 const Detect = () => {
+  const alert = useAlert();
+
   const {
     register,
     handleSubmit,
@@ -53,11 +56,10 @@ const Detect = () => {
         reset();
       })
       .catch((error) => {
-        const errorStatus = error.response.status;
-        if (errorStatus === 403) {
-          // TODO: do similar screen as in success case
+        const { status, data } = error.response;
+        if (status === 403) {
           setIsNotMutant(true);
-          alert('No es mutante.');
+          alert.error(data);
         }
         setIsMutant(false);
       });
@@ -66,12 +68,11 @@ const Detect = () => {
   const handleNewAnalysis = () => {
     setIsMutant(false);
     setIsNotMutant(false);
-    reset();
   };
 
   return (
     <DetectStyles className="spacing">
-      {!isMutant && !isNotMutant && (
+      {!isMutant && (
         <>
           <Heading3>Ingresá la secuencia de ADN</Heading3>
           <form onSubmit={handleSubmit(onDnaSubmit)} className="spacing-lg">
@@ -109,6 +110,7 @@ const Detect = () => {
         <SuccessScreen
           message="Mutante detectado"
           handleNew={handleNewAnalysis}
+          handleNewLabel="Volver a analizar"
         />
       )}
     </DetectStyles>

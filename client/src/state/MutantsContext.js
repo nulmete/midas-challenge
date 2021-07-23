@@ -1,6 +1,7 @@
 import { useState, createContext, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
+import { useAlert } from 'react-alert';
 import {
   getItemFromLocalStorage,
   saveItemToLocalStorage,
@@ -10,6 +11,8 @@ const LocalStateContext = createContext();
 const LocalStateProvider = LocalStateContext.Provider;
 
 const MutantsStateProvider = ({ children }) => {
+  const alert = useAlert();
+
   // gets mutants from localStorage (if there are any)
   // else, it is initialised as an empty array
   const [mutants, setMutants] = useState(
@@ -40,6 +43,8 @@ const MutantsStateProvider = ({ children }) => {
 
     // deletes mutant from Context
     setMutants(filteredMutants);
+
+    alert.success('Mutante eliminado.');
   };
 
   const favMutant = (id) => {
@@ -54,7 +59,7 @@ const MutantsStateProvider = ({ children }) => {
         // mutant is not a fav
         // and there is not an empty spot for a new fav
         if (favvedMutantsLength >= 5) {
-          alert('ya hay 5 favs');
+          alert.error('Ya tenés 5 mutantes como fav.');
           return mutant;
         }
         // mutant is not a fav

@@ -14,7 +14,10 @@ const UserMutants = () => {
       {mutantsAmount() > 0 ? (
         <div className="mutants-grid">
           {mutants.map((mutant) => (
-            <div className="mutant" key={mutant.id}>
+            <div
+              className={`mutant ${mutant.fav ? 'mutant--fav' : ''}`}
+              key={mutant.id}
+            >
               <div className="mutant__level">{mutant.level}</div>
               <div className="mutant__name">{mutant.name}</div>
               <div className="mutant__superpower">{mutant.superpower}</div>
