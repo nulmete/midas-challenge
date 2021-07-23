@@ -23,6 +23,29 @@ const NavStyles = styled.nav`
       border-bottom: 4px solid var(--color-nav-active-link);
     }
   }
+
+  .icon {
+    display: none;
+  }
+
+  @media screen and (max-width: 56.25em) {
+    li {
+      flex: 1 1 0;
+      text-align: center;
+    }
+
+    .text {
+      display: none;
+    }
+
+    .icon {
+      display: block;
+
+      svg {
+        color: inherit;
+      }
+    }
+  }
 `;
 
 export default NavStyles;

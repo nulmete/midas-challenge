@@ -14,6 +14,10 @@ const DetectStyles = styled.div`
       min-width: 8ch;
       max-width: 8ch;
       margin: 0.5em;
+
+      @media screen and (max-width: 37.5em) {
+        max-width: 100%;
+      }
     }
   }
 `;

@@ -16,7 +16,7 @@ const BodyStyles = styled.div`
 
     /* 600px */
     @media screen and (max-width: 37.5em) {
-      padding: 2rem;
+      padding: var(--spacer) 2.5rem;
     }
   }
 `;

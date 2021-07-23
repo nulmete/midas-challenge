@@ -8,6 +8,7 @@ const HeaderStyles = styled.header`
     font-size: 4.8rem;
     font-weight: var(--font-weight-bold);
     letter-spacing: 0.31em;
+    text-align: center;
   }
 `;
 

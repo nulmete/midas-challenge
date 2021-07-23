@@ -1,5 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faDiagnoses,
+  faUpload,
+  faUser,
+} from '@fortawesome/free-solid-svg-icons';
 import {
   detectRoute,
   uploadRoute,
@@ -16,18 +22,26 @@ const Nav = () => {
       <ul>
         <li>
           <NavLink to={detectRoute} exact>
-            Detector de mutantes
+            <div className="text">Detector de mutantes</div>
+            <div className="icon">
+              <FontAwesomeIcon icon={faDiagnoses} />
+            </div>
           </NavLink>
         </li>
         <li>
           <NavLink to={uploadRoute} exact>
-            Cargar mutantes
+            <div className="text">Cargar mutantes</div>
+            <div className="icon">
+              <FontAwesomeIcon icon={faUpload} />
+            </div>
           </NavLink>
         </li>
-        {/* TODO: add number of mutants at the end */}
         <li>
           <NavLink to={userMutantsRoute} exact>
-            Mis mutantes ({mutantsAmount()})
+            <div className="text">Mis mutantes ({mutantsAmount()})</div>
+            <div className="icon">
+              <FontAwesomeIcon icon={faUser} /> ({mutantsAmount()})
+            </div>
           </NavLink>
         </li>
       </ul>
